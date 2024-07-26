@@ -4,7 +4,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 import asyncio
 
 
-api = 'XXX'
+api = '7404054421:AAFIT16Nfk8bADpNpAL81ej8fmkX2zKkRKo'
 bot = Bot(token= api)
 dp = Dispatcher(bot, storage = MemoryStorage())
 
@@ -61,10 +61,11 @@ async def send_calories(message, state):
     except ValueError:
         txt = 'Вы ввели ошибочные данные'
     else:
-        print(calories)
+        txt = f'Ваша норма калорий по формуле Миффлина-Сан Жеора: {calories}'
 
 
-    await message.answer(f'Ваша норма калорий по формуле Миффлина-Сан Жеора: {calories}')
+
+    await message.answer(f'Ваша норма калорий по формуле Миффлина-Сан Жеора: {txt}')
     await state.finish()
 
 
